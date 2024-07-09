@@ -1,4 +1,4 @@
-FROM misotolar/alpine:3.20.0 as build
+FROM misotolar/alpine:3.20.1 as build
 
 ENV NGINX_VERSION=1.27.0
 ARG SHA256=b7230e3cf87eaa2d4b0bc56aadc920a960c7873b9991a1b66ffcc08fc650129c
@@ -125,7 +125,7 @@ RUN set -ex; \
             | xargs -r apk info --installed \
             | sort -u > /build/runDeps.txt
 
-FROM misotolar/alpine:3.20.0
+FROM misotolar/alpine:3.20.1
 
 LABEL maintainer="michal@sotolar.com"
 
