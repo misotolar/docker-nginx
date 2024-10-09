@@ -1,4 +1,4 @@
-FROM misotolar/alpine:3.20.2 as build
+FROM misotolar/alpine:3.20.3 as build
 
 ENV NGINX_VERSION=1.27.2
 ARG SHA256=a91ecfc3a0b3a2c1413afca627bd886d76e0414b81cad0fb7872a9655a1b25fa
@@ -125,11 +125,11 @@ RUN set -ex; \
             | xargs -r apk info --installed \
             | sort -u > /build/runDeps.txt
 
-FROM misotolar/alpine:3.20.2
+FROM misotolar/alpine:3.20.3
 
 LABEL maintainer="michal@sotolar.com"
 
-ARG OCSP_FETCHER_VERSION=18d9652fac2d3f9e7d5f88c64be72af30b7e82d2
+ARG OCSP_FETCHER_VERSION=f4e6b2bc971a5b703724e05576837d796fe10a4b
 ADD https://raw.githubusercontent.com/tomwassenberg/certbot-ocsp-fetcher/$OCSP_FETCHER_VERSION/certbot-ocsp-fetcher /usr/local/sbin/certbot-ocsp-fetcher
 
 ARG ERROR_PAGES_VERSION=17554bced347ecea9bd1363f1b96738b1c3d74e3
