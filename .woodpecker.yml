@@ -39,6 +39,12 @@ steps:
     commands:
       - echo ",${CI_COMMIT_SHA:0:8},latest" >> .tags
 
+  - name: shellcheck
+    image: kokuwaio/shellcheck
+    pull: true
+    settings:
+      shell: bash
+
   - name: publish
     image: woodpeckerci/plugin-docker-buildx
     pull: true

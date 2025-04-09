@@ -4,8 +4,8 @@ ENV NGINX_VERSION=1.27.4
 ARG SHA256=294816f879b300e621fa4edd5353dd1ec00badb056399eceb30de7db64b753b2
 ADD http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz /tmp/nginx.tar.gz
 
-ENV OPENSSL_VERSION=3.4.1
-ARG OPENSSL_SHA256=002a2d6b30b58bf4bea46c43bdd96365aaf8daa6c428782aa4feee06da197df3
+ENV OPENSSL_VERSION=3.5.0
+ARG OPENSSL_SHA256=344d0a79f1a9b08029b0744e2cc401a43f9c90acd1044d09a530b4885a8e9fc0
 ADD https://github.com/openssl/openssl/releases/download/openssl-$OPENSSL_VERSION/openssl-$OPENSSL_VERSION.tar.gz /tmp/openssl.tar.gz
 
 ARG BROTLI_VERSION=a71f9312c2deb28875acc7bacfdd5695a111aa53
