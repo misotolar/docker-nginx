@@ -1,7 +1,7 @@
 FROM misotolar/alpine:3.21.3 AS build
 
-ENV NGINX_VERSION=1.27.5
-ARG SHA256=e96acebb9c2a6db8a000c3dd1b32ecba1b810f0cd586232d4d921e376674dd0e
+ENV NGINX_VERSION=1.28.0
+ARG SHA256=c6b5c6b086c0df9d3ca3ff5e084c1d0ef909e6038279c71c1c3e985f576ff76a
 ADD http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz /tmp/nginx.tar.gz
 
 ENV OPENSSL_VERSION=3.5.0
