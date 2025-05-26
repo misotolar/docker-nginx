@@ -129,9 +129,6 @@ FROM misotolar/alpine:3.21.3
 
 LABEL maintainer="michal@sotolar.com"
 
-ARG OCSP_FETCHER_VERSION=f4e6b2bc971a5b703724e05576837d796fe10a4b
-ADD https://raw.githubusercontent.com/tomwassenberg/certbot-ocsp-fetcher/$OCSP_FETCHER_VERSION/certbot-ocsp-fetcher /usr/local/sbin/certbot-ocsp-fetcher
-
 ARG ERROR_PAGES_VERSION=17554bced347ecea9bd1363f1b96738b1c3d74e3
 ADD https://github.com/denysvitali/nginx-error-pages/archive/$ERROR_PAGES_VERSION.tar.gz /tmp/error-pages.tar.gz
 
@@ -160,7 +157,6 @@ RUN set -ex; \
     ln -sf /dev/stdout /usr/local/nginx/logs/access.log; \
     touch /usr/local/nginx/logs/error.log; \
     ln -sf /dev/stderr /usr/local/nginx/logs/error.log; \
-    chmod 755 /usr/local/sbin/certbot-ocsp-fetcher; \
     rm -rf \
         /var/cache/apk/* \
         /var/tmp/* \
