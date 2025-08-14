@@ -1,7 +1,7 @@
 FROM misotolar/alpine:3.22.1 AS build
 
-ENV NGINX_VERSION=1.28.0
-ARG SHA256=c6b5c6b086c0df9d3ca3ff5e084c1d0ef909e6038279c71c1c3e985f576ff76a
+ENV NGINX_VERSION=1.29.1
+ARG SHA256=c589f7e7ed801ddbd904afbf3de26ae24eb0cce27c7717a2e94df7fb12d6ad27
 ADD http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz /tmp/nginx.tar.gz
 
 ENV OPENSSL_VERSION=3.5.2
@@ -11,7 +11,7 @@ ADD https://github.com/openssl/openssl/releases/download/openssl-$OPENSSL_VERSIO
 ARG BROTLI_VERSION=a71f9312c2deb28875acc7bacfdd5695a111aa53
 ARG BROTLI_URL=https://github.com/google/ngx_brotli.git
 
-ARG HEADERS_VERSION=84a65d68687c9de5166fd49ddbbd68c6962234eb
+ARG HEADERS_VERSION=201e7446b6aff930188d3d1863af4ad829fc6b21
 ARG HEADERS_URL=https://github.com/openresty/headers-more-nginx-module.git
 
 ARG FANCYINDEX_VERSION=cbc0d3fca4f06414612de441399393d4b3bbb315
