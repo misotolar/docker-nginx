@@ -4,8 +4,8 @@ ENV NGINX_VERSION=1.29.1
 ARG SHA256=c589f7e7ed801ddbd904afbf3de26ae24eb0cce27c7717a2e94df7fb12d6ad27
 ADD http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz /tmp/nginx.tar.gz
 
-ENV OPENSSL_VERSION=3.5.2
-ARG OPENSSL_SHA256=c53a47e5e441c930c3928cf7bf6fb00e5d129b630e0aa873b08258656e7345ec
+ENV OPENSSL_VERSION=3.5.3
+ARG OPENSSL_SHA256=c9489d2abcf943cdc8329a57092331c598a402938054dc3a22218aea8a8ec3bf
 ADD https://github.com/openssl/openssl/releases/download/openssl-$OPENSSL_VERSION/openssl-$OPENSSL_VERSION.tar.gz /tmp/openssl.tar.gz
 
 ARG BROTLI_VERSION=a71f9312c2deb28875acc7bacfdd5695a111aa53
@@ -127,7 +127,9 @@ RUN set -ex; \
 
 FROM misotolar/alpine:3.22.1
 
-LABEL maintainer="michal@sotolar.com"
+LABEL org.opencontainers.image.url="https://github.com/misotolar/docker-nginx"
+LABEL org.opencontainers.image.description="nginx Alpine Linux image"
+LABEL org.opencontainers.image.authors="Michal Sotolar <michal@sotolar.com>"
 
 ARG ERROR_PAGES_VERSION=17554bced347ecea9bd1363f1b96738b1c3d74e3
 ADD https://github.com/denysvitali/nginx-error-pages/archive/$ERROR_PAGES_VERSION.tar.gz /tmp/error-pages.tar.gz
